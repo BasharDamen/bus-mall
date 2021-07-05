@@ -3,6 +3,7 @@
 // const middleImageElement = document.getElementById('middle-image');
 // const rightImageElement = document.getElementById('right-image');
 // const images = document.getElementById('products')
+
 const images = document.getElementById('products');
 const maxAttempts = 25;
 let counter = 0;
@@ -39,9 +40,9 @@ function randomIndex() {
 }
 
 
-let img1 = document.getElementById('Prod1')
-let img2 = document.getElementById('Prod2')
-let img3 = document.getElementById('Prod3')
+const img1 = document.getElementById('Prod1')
+const img2 = document.getElementById('Prod2')
+const img3 = document.getElementById('Prod3')
 
 
 let leftIndex; 
@@ -56,6 +57,8 @@ function renderimgs() {
   console.log(leftIndex);
   console.log(middleIndex);
   console.log(rightIndex);
+
+
     while (leftIndex === middleIndex
         || leftIndex === rightIndex
         || rightIndex === middleIndex) {
@@ -63,34 +66,26 @@ function renderimgs() {
             middleIndex = randomIndex();
             rightIndex = randomIndex();
     }
+
+
     img1.src = BusMall.gloArr[leftIndex].source;
     img2.src = BusMall.gloArr[middleIndex].source;
     img3.src = BusMall.gloArr[rightIndex].source;
     BusMall.gloArr[leftIndex].views ++;
     BusMall.gloArr[middleIndex].views ++;
     BusMall.gloArr[rightIndex].views ++;
+
 }
 renderimgs();
 
 
-img1.addEventListener('click', handleClick)
-img2.addEventListener('click', handleClick)
-img3.addEventListener('click', handleClick)
+const imgSection = document.getElementById('products');
+imgSection.addEventListener('click', handleClick)
 
-function renderList() {
-    const ul = document.getElementById('unlist');
-    
-    for (let i = 0; i < BusMall.gloArr.length; i++) {
-        let li = document.createElement('li');
-        ul.appendChild(li);
-        li.textContent = `${BusMall.gloArr[i].name} has this number of votes ( ${BusMall.gloArr[i].votes} ), and has showed up ( ${BusMall.gloArr[i].views} )`;
-        
-
-    }
-    img1.addEventListener('click', handleClick)
-    img2.addEventListener('click', handleClick)
-    img3.addEventListener('click', handleClick)
-}
+let resultBtn;
+// img1.addEventListener('click', handleClick)
+// img2.addEventListener('click', handleClick)
+// img3.addEventListener('click', handleClick)
 
 
 function handleClick(event) {
@@ -103,12 +98,36 @@ function handleClick(event) {
             BusMall.gloArr[middleIndex].votes++;
         }else if(event.target.id === 'Prod3'){
             BusMall.gloArr[rightIndex].votes++;
+        }else{
+            counter--
+            return
         }
         renderimgs();
     }
     else{
-        renderList();
+
+        resultBtn = document.getElementById('btn');
+        resultBtn.addEventListener('click', handleShow);
+        imgSection.removeEventListener('click', handleClick)
+
     }
 }
 
+function handleShow() {
+    renderList();
+    resultBtn.removeEventListener('click', handleShow);
+}
+
+function renderList() {
+    const ul = document.getElementById('unlist');
+    
+    for (let i = 0; i < BusMall.gloArr.length; i++) {
+        let li = document.createElement('li');
+        ul.appendChild(li);
+        li.textContent = `${BusMall.gloArr[i].name} has this number of votes ( ${BusMall.gloArr[i].votes} ), and has showed up ( ${BusMall.gloArr[i].views} )`;
+        
+
+    }
+    
+}
 

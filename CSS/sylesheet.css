@@ -75,12 +75,32 @@ footer {
     background-color: cadetblue;
 }
 
-
-
-
-#unlist li{
-    font-family: 'Source Code Pro', monospace;    margin: 10px 0;
-    list-style:none;
-    text-align: center;
-    font-weight: 600;
+section#list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+
+#unlist li {
+    font-family: 'Source Code Pro', monospace;
+    margin: 10px 0;
+    list-style: none;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+
+button#btn {
+    height: auto;
+    width: auto;
+    border-radius: 7px;
+    border: solid 2px;
+    border-color: cadetblue;
+    font-size: large;
+    font-weight: 600;
+    color: #2a3030;
+}
+
+button#btn:hover, a.ex1:active {color: rgb(204, 65, 65);}
