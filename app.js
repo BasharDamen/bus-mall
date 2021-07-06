@@ -187,3 +187,30 @@ var myChart = new Chart(ctx, {
   },
 })
 }
+
+function saveToLs(){
+
+    const convertedArr = JSON.stringify(BusMall.gloArr);
+    localStorage.setItem('ProductsVote', convertedArr);
+    
+}
+
+
+
+function getFromLs(){
+    const data = localStorage.getItem('ProductsVote');
+    console.log(data); 
+    const parsedOrder = JSON.parse(data); 
+    console.log(parsedOrder); 
+    if(parsedOrder){  
+        
+        BusMall.gloArr = parsedOrder;
+    
+
+        renderList();
+    }
+    
+        
+}
+
+getFromLs();
