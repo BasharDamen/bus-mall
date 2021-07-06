@@ -36,6 +36,7 @@ header h1 {
 
 main {
     margin: 0 auto;
+    background: #c7c7c7;
 }
 
 section#products {
@@ -62,6 +63,8 @@ h2{
     font-family: 'Fjalla One', sans-serif;
     font-size: xx-large;
     text-align: center;
+    margin: 0px 0;
+    padding: 36px 0 0 0;
 }
 
 #text p{
@@ -78,10 +81,17 @@ footer {
 
 section#list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+
+ul#unlist {
+    display: flex;
+    flex-direction: column;
+    width: 37%;
+    font-size: x-large;
+}
 
 #unlist li {
     font-family: 'Source Code Pro', monospace;
@@ -91,11 +101,13 @@ section#list {
     text-align: left;
 }
 
-
+#list div {
+    width: 60%;
+}
 
 button#btn {
-    height: auto;
-    width: auto;
+    height: 39px;
+    width: 29%;
     border-radius: 7px;
     border: solid 2px;
     border-color: cadetblue;
@@ -107,3 +119,11 @@ button#btn {
 button#btn:hover, a.ex1:active {color: rgb(204, 65, 65);}
 
 
+section#hrSec {
+    display: flex;
+    align-items: center;
+}
+
+hr {
+    width: -webkit-fill-available;
+}
