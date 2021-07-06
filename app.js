@@ -26,6 +26,8 @@ function BusMall(name, source) {
   BusMall.gloArr.push(this);
   prodNames.push(this.name);
 
+  saveToLs();
+
 }
 BusMall.gloArr = [];
 new BusMall('bag', 'img/bag.jpg');
