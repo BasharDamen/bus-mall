@@ -26,7 +26,6 @@ function BusMall(name, source) {
   BusMall.gloArr.push(this);
   prodNames.push(this.name);
 
-  saveToLs();
 
 }
 BusMall.gloArr = [];
@@ -129,8 +128,10 @@ function handleClick(event) {
         resultBtn = document.getElementById('btn');
         resultBtn.addEventListener('click', handleShow);
         imgSection.removeEventListener('click', handleClick)
+        saveToLs();
 
     }
+
 }
 
 function handleShow() {
@@ -209,7 +210,7 @@ function getFromLs(){
         BusMall.gloArr = parsedOrder;
     
 
-        renderList();
+        
     }
     
         
