@@ -149,7 +149,7 @@ function renderList() {
         prodShown.push(BusMall.gloArr[i].views);
         let li = document.createElement('li');
         ul.appendChild(li);
-        li.textContent = `${BusMall.gloArr[i].name} has this number of votes ( ${BusMall.gloArr[i].votes} ), and has showed up ( ${BusMall.gloArr[i].views} )`;
+        li.textContent = `${BusMall.gloArr[i].name} has this number of votes ( ${BusMall.gloArr[i].votes} ), and has showed up ( ${BusMall.gloArr[i].views} ) times`;
         
 
     }
