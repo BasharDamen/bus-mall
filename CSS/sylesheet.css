@@ -98,8 +98,23 @@ ul#unlist {
     font-family: 'Source Code Pro', monospace;
     margin: 10px 0;
     list-style: none;
-    font-weight: 600;
+    font-weight: 500;
     text-align: left;
+    font-size: x-small;
+}
+
+#unlist li:hover{
+    transform:scale(1.5, 1.5)
+}
+
+#unlist li:hover{
+    background-color: rgba(230, 230, 250, 0.966)
+}
+
+
+
+#unlist li:hover{
+    font-weight: 700;
 }
 
 #list div {
