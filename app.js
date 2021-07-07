@@ -102,14 +102,14 @@ renderimgs();
 
 
 const imgSection = document.getElementById('products');
-imgSection.addEventListener('click', handleClick)
+imgSection.addEventListener('click', handleClick);
 
 let resultBtn;
 
 
 function handleClick(event) {
     counter++;
-    console.log(event);
+    // console.log(event.target);
     if(maxAttempts >= counter){
         if (event.target.id === 'Prod1') {
             BusMall.gloArr[leftIndex].votes++;
